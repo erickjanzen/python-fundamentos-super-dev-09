@@ -94,4 +94,5 @@ def apagar_categoria():
         print("Não foi possível apagar a categoria")
     # print("Status Code:", resposta.status_code)
 
+
 menu()
