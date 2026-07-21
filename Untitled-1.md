@@ -1,201 +1,75 @@
-==================================================
-FUNÇÃO 1 - Obter nomes dos produtos
+PARTE 1 - Classe Autor
 ==================================================
 
-Criar uma função chamada:
-obter_nomes_produtos
-
-Parâmetro:
-produtos
+Classe:
+Autor
 
 Objetivo:
-Percorrer a lista de produtos e retornar uma lista contendo somente os nomes dos produtos.
+Criar uma classe para representar o autor de um livro.
 
-Regras:
-- Criar uma lista vazia chamada nomes
-- Utilizar for para percorrer a lista produtos
-- Para cada produto, pegar o valor da chave 'nome'
-- Adicionar o nome na lista nomes
-- Retornar a lista nomes
+O construtor deve receber os seguintes parâmetros:
+- nome
+- nacionalidade
+- ano_nascimento
 
-Exemplo de retorno:
-["Mouse", "Teclado", "Monitor"]
+Criar uma função chamada apresentar_dados.
 
+A função apresentar_dados deve apresentar:
+- Nome do autor
+- Nacionalidade do autor
+- Ano de nascimento do autor
+
+Criar uma função chamada obter_descricao.
+
+A função obter_descricao deve:
+- Retornar uma string contendo o nome e a nacionalidade do autor
+
+Exemplo de informação que poderá ser retornada:
+
+Machado de Assis - Brasileiro
 
 ==================================================
-FUNÇÃO 2 - Filtrar produtos com estoque baixo
+PARTE 2 - Classe Livro
 ==================================================
 
-Criar uma função chamada:
-obter_produtos_com_estoque_baixo
-
-Parâmetro:
-produtos
+Classe:
+Livro
 
 Objetivo:
-Retornar uma lista com os nomes dos produtos que possuem estoque menor que 10.
+Criar uma classe para representar um livro.
 
-Regras:
-- Criar uma lista vazia chamada produtos_estoque_baixo
-- Utilizar for para percorrer a lista produtos
-- Para cada produto, verificar o valor da chave 'estoque'
-- Se o estoque for menor que 10, adicionar o nome do produto na lista produtos_estoque_baixo
-- Retornar a lista produtos_estoque_baixo
+O construtor deve receber os seguintes parâmetros:
+- titulo
+- quantidade_paginas
+- ano_publicacao
+- autor
 
-Exemplo de retorno:
-["Mouse", "Webcam"]
+O parâmetro autor deverá receber um objeto da classe Autor.
 
+Criar uma função chamada apresentar_dados.
 
-==================================================
-FUNÇÃO 3 - Filtrar produtos por categoria
-==================================================
+A função apresentar_dados deve apresentar:
+- Título do livro
+- Quantidade de páginas
+- Ano de publicação
+- Descrição do autor
 
-Criar uma função chamada:
-obter_produtos_por_categoria
+Para apresentar a descrição do autor, a classe Livro deverá chamar a função obter_descricao do objeto autor.
 
-Parâmetros:
-produtos
-categoria_pesquisada
+Depois:
 
-Objetivo:
-Retornar uma lista com os nomes dos produtos que pertencem à categoria informada.
+1. Instanciar 2 objetos da classe Autor
+2. Instanciar 2 objetos da classe Livro
+3. Passar um objeto Autor para cada objeto Livro
+4. Chamar a função apresentar_dados de cada autor
+5. Chamar a função apresentar_dados de cada livro
 
-Regras:
-- Criar uma lista vazia chamada produtos_filtrados
-- Utilizar for para percorrer a lista produtos
-- Para cada produto, verificar o valor da chave 'categoria'
-- Se a categoria do produto for igual à categoria_pesquisada, adicionar o nome do produto na lista produtos_filtrados
-- Retornar a lista produtos_filtrados
+Importante:
 
-Exemplo:
-categoria_pesquisada = "Informática"
+Não preencher o autor do livro utilizando somente uma string.
 
-Exemplo de retorno:
-["Mouse", "Teclado", "Monitor"]
+Errado:
 
+autor = "Machado de Assis"
 
-==================================================
-FUNÇÃO 4 - Filtrar produtos acima de um preço ⭐⭐⭐⭐
-==================================================
-
-Criar uma função chamada:
-obter_produtos_acima_do_preco
-
-Parâmetros:
-produtos
-preco_minimo
-
-Objetivo:
-Retornar uma lista com os nomes dos produtos que possuem preço maior que o preço mínimo informado.
-
-Regras:
-- Criar uma lista vazia chamada produtos_caros
-- Utilizar for para percorrer a lista produtos
-- Para cada produto, verificar o valor da chave 'preco'
-- Se o preço do produto for maior que preco_minimo, adicionar o nome do produto na lista produtos_caros
-- Retornar a lista produtos_caros
-
-Exemplo:
-preco_minimo = 100
-
-Exemplo de retorno:
-["Teclado", "Monitor"]
-
-
-==================================================
-FUNÇÃO 5 - Somar o valor total do estoque
-==================================================
-
-Criar uma função chamada:
-somar_valor_total_estoque
-
-Parâmetro:
-produtos
-
-Objetivo:
-Calcular o valor total em estoque da loja.
-
-Para calcular o valor total de cada produto:
-preco * estoque
-
-Regras:
-- Criar uma variável chamada total com o valor 0
-- Utilizar for para percorrer a lista produtos
-- Para cada produto, pegar o preço e o estoque
-- Multiplicar preço por estoque
-- Somar o resultado na variável total
-- Retornar o total
-
-Exemplo:
-Produto:
-preco = 50
-estoque = 10
-
-Valor em estoque:
-50 * 10 = 500
-
-
-==================================================
-FUNÇÃO PRINCIPAL - exercicio07
-==================================================
-
-Criar uma função chamada:
-exercicio07
-
-Objetivo:
-Criar a lista de produtos, chamar as funções criadas e apresentar os resultados.
-
-Dentro da função exercicio07:
-
-1. Criar a lista produtos com 5 produtos
-
-2. Chamar a função obter_nomes_produtos
-
-3. Chamar a função obter_produtos_com_estoque_baixo
-
-4. Chamar a função obter_produtos_por_categoria
-   Exemplo de categoria pesquisada:
-   "Informática"
-
-5. Chamar a função obter_produtos_acima_do_preco
-   Exemplo de preço mínimo:
-   100
-
-6. Chamar a função somar_valor_total_estoque
-
-7. Apresentar todos os resultados com print
-
-
-==================================================
-EXEMPLO DE SAÍDA ESPERADA
-==================================================
-
-Nomes dos produtos:
-["Mouse", "Teclado", "Monitor", "Cadeira", "Webcam"]
-
-Produtos com estoque baixo:
-["Mouse", "Webcam"]
-
-Produtos da categoria Informática:
-["Mouse", "Teclado", "Monitor", "Webcam"]
-
-Produtos acima de R$ 100:
-["Teclado", "Monitor", "Cadeira"]
-
-Valor total em estoque:
-12500.5
-
-
-==================================================
-REGRAS GERAIS
-==================================================
-
-- Utilizar lista
-- Utilizar dicionários dentro da lista
-- Utilizar for
-- Utilizar funções separadas
-- Não utilizar while
-- Não fazer todo o código dentro de uma única função
-- Cada função deve ter apenas uma responsabilidade
-- A função exercicio07 deve chamar as outras funções
-"""
+O atributo autor da classe Livro deverá receber um objeto da classe Autor.
