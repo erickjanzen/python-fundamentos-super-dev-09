@@ -57,21 +57,40 @@ Cidade: {self.cidade}
 Estado: {self.estado}
 """)
     def obter_endereco_completo(self):
-        return f"{self.rua} - {self.numero} - {self.bairro} - {self.cidade}/{self.estado}"
+        return f"{self.rua} - {self.numero} - {self.bairro} - {self.cidade}/{self.estado}\n"
 
 class Pessoa:
-    def __init__(self, nome: str, endereco: Endereco):
+    def __init__(self, nome: str, idade: int, telefone: str, endereco: Endereco):
         self.nome = nome
+        self.idade = idade
+        self.telefone = telefone
         self.endereco = endereco
     
     def apresentar_dados(self):
-        print(f"Nome: {self.nome}")
+        print(f"""
+Nome: {self.nome}
+Idade: {self.idade}
+Telefone: {self.telefone}""")
+
+def verificar_maioridade(self):
+    if self.idade <= 18:
+        print("Maior de idade")
+    else:
+        print("Menor de idade")
 
 def exemplo_endereco():
-    endereco = Endereco("Silvano Cândido", 3065, "Ponta Aguda", "Blumenau", "SC")
-    pessoa = Pessoa("Erick Janzen", endereco)
+    endereco1 = Endereco("Silvano Cândido", 3065, "Ponta Aguda", "Blumenau", "SC")
+    endereco2 = Endereco("Rua Pedrinho Silva DJ", 67, "Morro do dendê", "Rio de Janeiro", "RJ")
 
-    pessoa.apresentar_dados()
-    print(pessoa.endereco.obter_endereco_completo()) 
+    pessoa1 = Pessoa("Erick Janzen", 18, "47 99235-4439", endereco1)
+    pessoa2 = Pessoa("Ayrton Sena", 42, "67 12345-6789", endereco2)
+
+    pessoa1.apresentar_dados()
+    print(endereco1.obter_endereco_completo())
+    pessoa1.verificar_maioridade()
+
+    pessoa2.apresentar_dados()
+    print(endereco2.obter_endereco_completo()) 
+    pessoa2.verificar_maioridade()
 
 exemplo_endereco()
